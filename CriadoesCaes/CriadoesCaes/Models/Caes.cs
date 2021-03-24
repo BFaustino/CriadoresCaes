@@ -39,5 +39,19 @@ namespace CriadoesCaes.Models
         /// Registo do cão no Livro de Origens Portuguesas(LOP)
         /// </summary>
         public string LOP { get; set; }
+
+
+        //*************************************************************
+
+        /// <summary>
+        /// FK para a Raça do Cão
+        /// </summary>
+        
+        [ForeignKey(nameof(Raca)] //esta 'anotação' indica que o atributo 'RacaFK' está a executar o mesmo que o atributo raça e que representa uma FK para a classe Raca
+
+        public int RacaFK { get; set; } // atributo para ser usado no SGBD e no C#. Reresenta a FK para a Raça do cão
+        public Racas Raca { get; set; } // atributo para ser usado no SGBD. Reresenta a FK para a Raça do cão
+
     }
+
 }
